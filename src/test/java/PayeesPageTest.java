@@ -18,7 +18,7 @@ import Resources.Base;
 public class PayeesPageTest extends Base{
     //public static Logger log = LogManager.getLogger(Base.class.getName());
 
-    @Test(invocationCount = 2)
+    @Test(invocationCount = 3)
     public void payeesPageNavigation()throws IOException, InterruptedException
              {
         // initialize driver
@@ -35,7 +35,7 @@ public class PayeesPageTest extends Base{
         Assert.assertEquals(payee.getMenuBtn(),"Payees");
     }
 
-    @Test
+    @Test(invocationCount = 3)
     public void addNewPayeeInPayeePage()throws IOException, InterruptedException
     {
         // initialize driver
@@ -69,7 +69,7 @@ public class PayeesPageTest extends Base{
         }
         Assert.assertTrue(flag);
     }
-    @Test
+    @Test(invocationCount = 3)
     public void verifyPayeeNameRequiredInPayeePage()throws IOException, InterruptedException
     {
         // initialize driver
@@ -94,7 +94,7 @@ public class PayeesPageTest extends Base{
 
     }
 
-    @Test
+    @Test(invocationCount = 3)
     public void verifyNameDispyAscInPayeePage()throws IOException, InterruptedException
     {
         // initialize driver
@@ -126,7 +126,7 @@ public class PayeesPageTest extends Base{
         Collections.reverse(sortedNameListDesc);
         Assert.assertTrue(payeesNamesListDesc.equals(sortedNameListDesc));
     }
-    @Test
+    @Test(invocationCount = 3)
     public void navigateToPaymentPage()throws IOException, InterruptedException
     {
         // initialize driver
