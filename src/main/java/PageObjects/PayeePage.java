@@ -28,7 +28,7 @@ public class PayeePage {
     By nameInDescOrderBtn = By.xpath(("//h3/span[contains(text(), \"Name\" )]"));
         //(""//li/a[@href=\"/client/payees\"]");
     // method to send WebElement of LogIn or Register
-    public String getMenuBtn() {
+    public String getHeader() {
 
         return driver.findElement(header).getText();
     }

@@ -62,7 +62,6 @@ public class Base {
         return driver;
     }
 
-    @AfterTest(alwaysRun=true)
 
     public void tearDown()
     {

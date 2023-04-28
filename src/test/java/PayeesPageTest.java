@@ -18,7 +18,7 @@ import Resources.Base;
 public class PayeesPageTest extends Base{
     //public static Logger log = LogManager.getLogger(Base.class.getName());
 
-    @Test(invocationCount = 3)
+    @Test//(invocationCount = 3)
     public void payeesPageNavigation()throws IOException, InterruptedException
              {
         // initialize driver
@@ -32,10 +32,11 @@ public class PayeesPageTest extends Base{
         PayeePage payee=new PayeePage(driver);
         menu.getMenuBtn().click();
         menu.getPayeeBtn().click();
-        Assert.assertEquals(payee.getMenuBtn(),"Payees");
+        Assert.assertEquals(payee.getHeader(),"Payees");
+        tearDown();
     }
 
-    @Test(invocationCount = 3)
+    @Test//(invocationCount = 3)
     public void addNewPayeeInPayeePage()throws IOException, InterruptedException
     {
         // initialize driver
@@ -68,6 +69,7 @@ public class PayeesPageTest extends Base{
             }
         }
         Assert.assertTrue(flag);
+        tearDown();
     }
     @Test(invocationCount = 3)
     public void verifyPayeeNameRequiredInPayeePage()throws IOException, InterruptedException
@@ -91,6 +93,7 @@ public class PayeesPageTest extends Base{
 
         payeePage.setAddPayeeName("Mathew");
         Assert.assertFalse(payeePage.getPayeeNameReqErrMsg(driver).isDisplayed());
+        tearDown();
 
     }
 
@@ -125,6 +128,7 @@ public class PayeesPageTest extends Base{
         Collections.sort(sortedNameListDesc);
         Collections.reverse(sortedNameListDesc);
         Assert.assertTrue(payeesNamesListDesc.equals(sortedNameListDesc));
+        tearDown();
     }
     @Test(invocationCount = 3)
     public void navigateToPaymentPage()throws IOException, InterruptedException
@@ -187,6 +191,7 @@ public class PayeesPageTest extends Base{
         }
        Assert.assertEquals(everydayAcBalanceAfterTrns,(everydayAcBalanceBeforeTrns-500));
         Assert.assertEquals(billsAcBalanceAfterTrns,(billsAcBalanceBeforeTrns+500));
+        tearDown();
 
 
     }
